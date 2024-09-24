@@ -25,17 +25,8 @@ class Department {
     this.employees.push(employee);
   }
 
-  // Returns the total salary of all employees in the department
+  // Calculates total salary for the department (without bonuses)
   getDepartmentSalary() {
     return this.employees.reduce((total, employee) => total + employee.salary, 0);
-  }
-
-  // Returns the total salary of all employees including manager bonuses
-  calculateTotalSalaryWithBonus() {
-    return this.employees.reduce((total, employee) => {
-      return employee instanceof Manager
-        ? total + employee.salary + employee.bonus
-        : total + employee.salary;
-    }, 0);
   }
 }
